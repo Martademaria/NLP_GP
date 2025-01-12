@@ -27,13 +27,13 @@ client = AzureOpenAI(
 
 # Show restaurant information
 def show_restaurant_info():
-    st.image("labellavita2.png", use_column_width=True)
-    st.image("aboutus3.png", use_column_width=True)
-    st.image("aaa.png", use_column_width=True)  # This image should be displayed normally
+    st.image("labellavita2.png", use_container_width=True)
+    st.image("aboutus3.png", use_container_width=True)
+    st.image("aaa.png", use_container_width=True)  # This image should be displayed normally
 
 def show_chatbot():
     # Replace the title with an image
-    st.image("va.png", use_column_width=True)
+    st.image("va.png", use_container_width=True)
     
     # Modify the description with relevant emojis
     st.markdown("""
@@ -116,7 +116,7 @@ def generate_response(conversation_history):
 
 # Function to display the menu image
 def show_random_menu_image():
-    st.image("themenu.png", use_column_width=True)  # Use the correct width for the menu image
+    st.image("themenu.png", use_container_width=True)  # Use the correct width for the menu image
 
 # Main function to display content and chatbot
 def main():
@@ -130,7 +130,7 @@ def main():
         show_random_menu_image()
 
     # Show 'loc.png' image below the button and menu
-    st.image("loc.png", use_column_width=True)  # Show this image after the button
+    st.image("loc.png", use_container_width=True)  # Show this image after the button
 
     show_chatbot()
 
