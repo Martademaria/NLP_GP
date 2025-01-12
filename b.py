@@ -2,8 +2,9 @@ import streamlit as st
 from openai import AzureOpenAI
 import os
 import random  # Import random for selecting images
+from datetime import datetime
 
-import os
+
 from dotenv import load_dotenv
 
 # Cargar las variables de entorno desde el archivo .env
