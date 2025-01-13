@@ -3,7 +3,7 @@ from openai import AzureOpenAI
 import os
 import random  # Import random for selecting images
 from datetime import datetime
-
+import re
 
 from dotenv import load_dotenv
 
@@ -112,8 +112,13 @@ def generate_response(conversation_history):
         }
     )
 
-    return completion.choices[0].message.content.strip()
+    response_content = completion.choices[0].message.content.strip()
 
+    # Remove any document references like [doc1], [doc2], [doc3], etc.
+    response_content = re.sub(r'\[doc\d+\]', '', response_content)
+
+    return response_content
+    
 # Function to display the menu image
 def show_random_menu_image():
     st.image("themenu.png", use_container_width=True)  # Use the correct width for the menu image
