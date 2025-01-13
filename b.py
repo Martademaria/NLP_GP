@@ -75,6 +75,8 @@ def show_chatbot():
         st.chat_message("assistant").markdown(f"**Assistant:** {assistant_message['content']}", unsafe_allow_html=True)
 
 
+import re  # Asegúrate de importar 're' al inicio del script
+
 # Function to generate the chatbot response
 def generate_response(conversation_history):
     # Generate response using Azure OpenAI
@@ -118,6 +120,7 @@ def generate_response(conversation_history):
     response_content = re.sub(r'\[doc\d+\]', '', response_content)
 
     return response_content
+
     
 # Function to display the menu image
 def show_random_menu_image():
