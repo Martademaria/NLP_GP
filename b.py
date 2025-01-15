@@ -41,9 +41,6 @@ def show_chatbot():
     - **Vegan options & Daily specials**
 
     Just type your question, and our chatbot will assist you!
-    
-    ### Supported Languages 🌐:
-    🇺🇸 🇪🇸 🇫🇷 🇩🇪 🇮🇹
     """)
 
     # Initialize conversation history in session state
@@ -144,6 +141,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
