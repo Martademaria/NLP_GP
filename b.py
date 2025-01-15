@@ -1,10 +1,8 @@
 import streamlit as st
 from openai import AzureOpenAI
 import os
-import random
-from datetime import datetime
-import re
 from dotenv import load_dotenv
+import re
 
 # Load environment variables from .env file
 load_dotenv()
@@ -33,22 +31,29 @@ def show_restaurant_info():
 def show_chatbot():
     # Replace the title with an image
     st.image("va.png", use_container_width=True)
-    
+
     # Add chatbot description with emojis
     st.markdown("""
     Our assistant is here to help you with:
     - **Menu questions** ️
     - **Popular dishes** ️
     - **Allergies** ️
-    - **Vegan options & Daily specials** 
-    
+    - **Vegan options & Daily specials**
+
     Just type your question, and our chatbot will assist you!
+    
+    ### Supported Languages 🌐:
+    ![English](https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg) English
+    ![Spanish](https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg) Spanish
+    ![French](https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg) French
+    ![German](https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg) German
+    ![Italian](https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg) Italian
     """)
 
     # Initialize conversation history in session state
     if "conversation_history" not in st.session_state:
         st.session_state.conversation_history = [
-            {"role": "system", "content": "You are a restaurant assistant."}
+            {"role": "system", "content": "You are a multilingual restaurant assistant."}
         ]
 
     user_query = st.text_input("How can I assist you today?")
@@ -130,7 +135,7 @@ def main():
 
     # Add space before the button
     st.markdown("<br><br><br>", unsafe_allow_html=True)
-    
+
     # Show menu button
     if st.button("See Menu", key="random_menu_button", use_container_width=True):
         show_random_menu_image()
@@ -143,4 +148,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
