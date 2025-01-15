@@ -8,6 +8,7 @@ from ktrain import text
 import shutil
 import docx
 
+
 # Load environment variables from .env file
 load_dotenv()
 
