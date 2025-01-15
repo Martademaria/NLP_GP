@@ -3,7 +3,3 @@ streamlit
 Pillow
 requests
 python-dotenv
-ktrain
-tensorflow==2.10.0
-docx
-textract==1.6.3
