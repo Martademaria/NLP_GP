@@ -43,11 +43,7 @@ def show_chatbot():
     Just type your question, and our chatbot will assist you!
     
     ### Supported Languages 🌐:
-    ![English](https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg) English
-    ![Spanish](https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg) Spanish
-    ![French](https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg) French
-    ![German](https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg) German
-    ![Italian](https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg) Italian
+    🇺🇸 🇪🇸 🇫🇷 🇩🇪 🇮🇹
     """)
 
     # Initialize conversation history in session state
@@ -148,5 +144,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
