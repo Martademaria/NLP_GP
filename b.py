@@ -1,13 +1,8 @@
-import os
 import streamlit as st
 from openai import AzureOpenAI
+import os
 from dotenv import load_dotenv
 import re
-import ktrain
-from ktrain import text
-import shutil
-import docx
-
 
 # Load environment variables from .env file
 load_dotenv()
@@ -28,14 +23,14 @@ client = AzureOpenAI(
 
 # Function to show restaurant information
 def show_restaurant_info():
-    st.image("labellavita2.png", use_column_width=True)
-    st.image("aboutus3.png", use_column_width=True)
-    st.image("aaa.png", use_column_width=True)
+    st.image("labellavita2.png", use_container_width=True)
+    st.image("aboutus3.png", use_container_width=True)
+    st.image("aaa.png", use_container_width=True)
 
 # Function to handle chatbot interactions
 def show_chatbot():
     # Replace the title with an image
-    st.image("va.png", use_column_width=True)
+    st.image("va.png", use_container_width=True)
 
     # Add chatbot description with emojis
     st.markdown("""
@@ -125,36 +120,7 @@ def generate_response(conversation_history):
 
 # Function to display the menu image
 def show_random_menu_image():
-    st.image("themenu.png", use_column_width=True)
-
-# Function to index documents from a folder
-def index_documents(docs_folder):
-    index_dir = '/tmp/myindex'
-    if os.path.exists(index_dir):
-        shutil.rmtree(index_dir)
-
-    text.SimpleQA.initialize_index(index_dir)
-
-    # Index documents from folder
-    text.SimpleQA.index_from_folder(
-        docs_folder,
-        index_dir,
-        commit_every=1,
-        use_text_extraction=True
-    )
-
-# Function to handle the QA model choice
-def ask_question_with_model(model_choice, question):
-    if model_choice == "bert":
-        # Use BERT for answering
-        qa = text.SimpleQA('/tmp/myindex')
-        answers = qa.ask(question)
-        full_answer = answers[0]['full_answer']
-        return full_answer
-    elif model_choice == "azure":
-        # Use Azure for answering
-        conversation_history = [{"role": "user", "content": question}]
-        return generate_response(conversation_history)
+    st.image("themenu.png", use_container_width=True)
 
 # Main function to display content and chatbot
 def main():
@@ -168,23 +134,18 @@ def main():
         show_random_menu_image()
 
     # Show location image below the button
-    st.image("loc.png", use_column_width=True)
-
-    # Ask user to choose model
-    model_choice = st.selectbox("Choose model for answering:", ["bert", "azure"])
-
-    # Get user's question
-    question = st.text_input("Ask a question:")
-
-    if question:
-        answer = ask_question_with_model(model_choice, question)
-        st.write("Answer:", answer)
+    st.image("loc.png", use_container_width=True)
 
     # Show chatbot
     show_chatbot()
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
 
 
 
