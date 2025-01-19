@@ -51,7 +51,7 @@ def show_chatbot():
                 "content": (
                     "You are a multilingual expert waiter assisting customers with menu inquiries. "
                     "Answer questions about the menu in an energetic and respectful tone. "
-                    "Provide information only from the data. 
+                    "Provide information only from the data." 
                     "Example:\n\n"
                     "Question: What are the best gluten-free spicy options?\n"
                     "Answer:\n"
