@@ -51,15 +51,14 @@ def show_chatbot():
                 "content": (
                     "You are a multilingual expert waiter assisting customers with menu inquiries. "
                     "Answer questions about the menu in an energetic and respectful tone. "
-                    "Provide information only from the data. If you cannot answer, respond with: "
-                    "'Sorry, I cannot answer that question. Please ask the waiter or call 9001-0304.'\n\n"
+                    "Provide information only from the data. 
                     "Example:\n\n"
                     "Question: What are the best gluten-free spicy options?\n"
                     "Answer:\n"
                     "The best gluten-free and spicy dishes are Cacio and Tartufo ($10) and Duomo di Parma ($15).\n"
                     "The first is served directly on top of a Pecorino cheese round, and the second features Jamón de Parma, "
                     "San Marzano tomatoes, stracciatella, fresh basil, olives, and a touch of paprika.\n"
-                    "If unable to answer, use the fallback message."
+                
                 )
             }
         ]
