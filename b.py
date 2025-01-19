@@ -105,7 +105,7 @@ def generate_response(conversation_history):
                 "type": "azure_search",
                 "parameters": {
                     "endpoint": SEARCH_ENDPOINT,
-                    "index_name": "try1ragnlp",  # Ensure this index exists in Azure
+                    "index_name": "qamenufinal",  # Ensure this index exists in Azure
                     "semantic_configuration": "azureml-default",
                     "authentication": {
                         "type": "api_key",
